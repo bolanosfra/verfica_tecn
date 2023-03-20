@@ -1,1 +1,13 @@
-<p>search works!</p>
+<div class="container">
+    <h2 class="txt">Find anime</h2>
+    <form>
+      <div class="form-group">
+        <label> Items Anime:</label>
+        <input type="text" class="form-control input" #newquery>
+    </div>
+
+      <button (click)="submit(newquery)" class="btn btn-primary">Search</button>
+    </form>
+
+    {{results | json}}
+  </div>
