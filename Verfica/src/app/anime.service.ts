@@ -9,7 +9,7 @@ export class AnimeService {
   constructor(private http: HttpClient) { }
 
   searchProd(query: string) {
-    const url = `https://api.jikan.moe/v4/anime?${query}`;
+    const url = `https://api.jikan.moe/v4/anime?q=one%20piece`;
     const headers = new HttpHeaders({
       Authorization: ""
     });

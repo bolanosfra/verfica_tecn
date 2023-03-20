@@ -28,12 +28,17 @@ export class SearchComponent implements OnInit {
     }
     this.query = query.value;
     this.obsProd = this.anime.searchProd(this.query);
-    this.obsProd.subscribe(
-      (data) => {
-        this.results = data;
-        console.log(this.results);
-        localStorage.setItem('dataSource', JSON.stringify(this.results));
-      });
+    this.obsProd.subscribe((data: any) => {
+      this.results = data;
+      console.log(this.results);
+    });
   }
 
+  renderResults(res: any): void {
+    this.results = null;
+    if (res && res.tracks && res.tracks.items) {
+      this.results = res.tracks.items;
+  }
+
+  }
 }
